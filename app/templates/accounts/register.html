@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<main class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <section class="mb-6">
+       <p>For new users Please contact the admin for more information</p>
+      </br>
+      <div class="text-left mb-4">
+          Already registered? <a href="{{ url_for('account.login') }}"> Click to
+            Login!</a>
+      </div>
+     </section>
+   </div>
+  </div>
+</main>
+{% endblock %}

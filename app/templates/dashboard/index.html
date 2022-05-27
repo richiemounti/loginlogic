@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <main class="container mt-4">
+        {% if config.DEVELOPMENT %}
+            <div class="jumbotron dev">
+        {% else %}
+            <div class="jumbotron prod">
+        {% endif %}
+            <h1> {{('Carthage')}} </h1>
+            
+            {% if current_user.is_anonymous %}
+                <p><a href="{{ url_for('account.register') }}" class="btn btn-primary">{{('Register') }}</a></p>
+                <p><a href="{{ url_for('account.login') }}" class="btn btn-secondary"> {{('Login') }}</a></p>
+            {% endif %}
+        
+            </div>
+        <div class="row">
+            <div class="col col-lg-6 col-sm-12">
+            </div>
+            <div class="col col-lg-6 col-sm-12">
+                <p> {{ ('This is a prototype logic for a login system that enables users to login and creates session id.') }} 
+                </p>
+                <p> {{ ('Application features include: login and authentication,
+                     password hashing, role based authentication).') }} 
+                </p>
+
+            </div>
+        </div>
+    </main>
+{% endblock  %}
